@@ -64,28 +64,34 @@ submitButton.addEventListener("click", () => {
   if (finalAnswer > 9) {
     answerDisplay.style.marginTop = "210px";
   }
+
+  animationsEnabled();
+});
+
+function animationsEnabled() {
   if (animationToggle.innerText == 'Enable Animations'){
     answerDisplay.style.opacity = "1";
   }
   if (animationToggle.innerText == 'Disable Animations'){
-  //Triggers shake animation and delay for fade in animation
-  answerDisplay.classList.remove("answerFadeIn");
-  ball.classList.remove("shake");
-  arm.classList.remove("armIn");
-  arm.classList.remove("armOut");
-
-  setTimeout(armIn, 10);
-  setTimeout(shake, 1010);
-  setTimeout(armOut, 2500);
-  setTimeout(fadeIn, 2500);
   
+    answerDisplay.classList.remove("answerFadeIn");
+    ball.classList.remove("shake");
+    arm.classList.remove("armIn");
+    arm.classList.remove("armOut");
+    questionDisplay.style.opacity = '0';
+    questionDisplay.classList.remove("answerFadeIn");
 
-  //Temporarily disables the ask button to restrict repeated inputs
-  submitButton.disabled = true;
-  setTimeout(btnDisable, 4500);
+    setTimeout(armIn, 10);
+    setTimeout(shake, 1010);
+    setTimeout(armOut, 2500);
+    setTimeout(fadeIn, 2500);
+    
+
+    //Temporarily disables the ask button to restrict repeated inputs
+    submitButton.disabled = true;
+    setTimeout(btnDisable, 4500);
   }
-});
-
+}
 
 function btnDisable() {
   submitButton.disabled = false;
@@ -103,6 +109,7 @@ function shake() {
 
 function armIn() {
   arm.classList.add("armIn");
+  questionDisplay.classList.add("answerFadeIn");
 }
 
 function armOut() {

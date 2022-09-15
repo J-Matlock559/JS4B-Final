@@ -1,105 +1,120 @@
 body {
-    background-color: #222;
-    color: white;
-  }
+  background-color: #222;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  padding: 20px;
+  font-size: large;
+}
+
+#submitButton {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.test {
+  position: absolute;
+}
+
+#arm {
+  width: 400px;
+  height: 800px;
+  top: -100%;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  z-index: 5;
+  opacity: 0;
+}
+
+#ball{
+  width: 600px;
+  height: 600px;
+  position: relative;
+  background: url("../img/A-Window.png") no-repeat;
+  background-size: contain;
+}
+
+#ans {
+  height: 150px;
+  width: 150px;
+  background-size: contain;
+  z-index: 2;
+  margin-top: 190px;
+}
+
+.m-5{
+  margin-top: 50px;
   
-  .container {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    text-align: center;
-    width: 100%;
-  }
+}
 
-  #arm {
-    width: 400px;
-    height: 800px;
-    top: -800px;
-    display: inline-block;
-    position: absolute;
-    /* background: url("../img/Arm3.png") no-repeat; */
-    background-size: contain;
-    z-index: 5;
-  }
+#answerDisplay{
+  opacity: 0;
+}
 
-  #ball{
-    width: 600px;
-    height: 600px;
-    position: relative;
-    background: url("../img/A-Window.png") no-repeat;
-    background-size: contain;
-  }
+/* --------------ANIMATIONS--------------- */
 
-  #ans {
-    height: 150px;
-    width: 150px;
-    background-size: contain;
-    z-index: 2;
-    margin-top: 190px;
-  }
-  
-  .m-5{
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  #answerDisplay{
-    opacity: 0;
-  }
-  
-  .answerFadeIn { 
-    animation: fadeIn 3s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    20% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  .shake {
-    animation: shakeBall .5s;
-    animation-iteration-count: 3;
-  }
+.answerFadeIn { 
+  animation: fadeIn 3s;
+  animation-fill-mode: forwards;
+}
 
-  @keyframes shakeBall {
-    0%   { left: 0px; top: 0px; }
-    25%  { left: 2px; top: 5px; }
-    50%  { left: 5px; top: 0px; }
-    75%  { left: 2px; top: 8px; }
-    100% { left: 0px; top: 0px; }
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; font-size: 2rem }
+  20% { opacity: 0; font-size: 2rem }
+  100% { opacity: 1; font-size: 3rem }
+}
 
-  .armIn {
-    animation: armIn 1s;
-    animation-fill-mode: forwards; 
-  }
+.shake {
+  animation: shakeBall .5s;
+  animation-iteration-count: 3;
+}
 
-  @keyframes armIn {
-    0% { left: 730px; top: -800px; }
-    100% { left: 730px; top: -230px; }
-  }
+@keyframes shakeBall {
+  0%   { left: 0px; top: 0px; }
+  25%  { left: 2px; top: 5px; }
+  50%  { left: 5px; top: 0px; }
+  75%  { left: 2px; top: 8px; }
+  100% { left: 0px; top: 0px; }
+}
 
-  .armOut {
-    animation: armOut 1s;
-  }
+.armIn {
+  animation: armIn 1s;
+  animation-fill-mode: forwards; 
+}
 
-  @keyframes armOut {
-    0% { left: 730px; top: -230px; }
-    100% { left: 730px; top: -800px; }
-  }
+@keyframes armIn {
+  0% { left: 0px; top: -800px; opacity: 1;}
+  100% { left: 0px; top: -230px; opacity: 1; }
+}
 
-  .armShake {
-    animation: armShake .5s;
-    animation-iteration-count: 3;
-  }
+.armOut {
+  animation: armOut 1s;
+}
 
-  @keyframes armShake {
-    0%   { left: 730px; top: -230px; }
-    25%  { left: 732px; top: -225px; }
-    50%  { left: 735px; top: -230px; }
-    75%  { left: 732px; top: -222px; }
-    100% { left: 730px; top: -230px; }
-  }
+@keyframes armOut {
+  0% { left: 0px; top: -230px; opacity: 1; }
+  100% { left: 0px; top: -800px; opacity: 1; }
+}
+
+.armShake {
+  animation: armShake .5s;
+  animation-iteration-count: 3;
+}
+
+@keyframes armShake {
+  0%   { left: 0px; top: -230px; opacity: 1; }
+  25%  { left: 2px; top: -225px; opacity: 1; }
+  50%  { left: 5px; top: -230px; opacity: 1; }
+  75%  { left: 2px; top: -222px; opacity: 1; }
+  100% { left: 0px; top: -230px; opacity: 1; }
+}
 
