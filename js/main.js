@@ -2,7 +2,9 @@ const answerDisplay = document.querySelector("#ans");
 const questionDisplay = document.querySelector("#questionDisplay");
 const questionInput = document.querySelector("#questionInput");
 const submitButton = document.querySelector("#submitButton");
+const animationToggle = document.querySelector("#animationToggle");
 const ball = document.querySelector("#ball");
+const armDiv = document.querySelector("#arm");
 
 const possibleAnswers = [
   "url('./img/A1.png') no-repeat",
@@ -27,33 +29,61 @@ const possibleAnswers = [
   "url('./img/A20.png') no-repeat",
 ];
 
+const arms = [
+  "url('./img/Arm.png') no-repeat",
+  "url('./img/Arm2.png') no-repeat",
+  "url('./img/Arm3.png') no-repeat"
+];
+
+animationToggle.addEventListener("click", () => {
+  if (animationToggle.innerText == 'Enable Animations'){
+    animationToggle.innerText = 'Disable Animations'
+  } else {
+    animationToggle.innerText = 'Enable Animations'
+  }
+});
 
 submitButton.addEventListener("click", () => {
   let finalAnswer = Math.floor(Math.random() * possibleAnswers.length);
+  let randArm = Math.floor(Math.random() * arms.length);
 
+  armDiv.style.background = arms[randArm];
+  armDiv.style.backgroundSize = "contain";
   answerDisplay.style.opacity = "0";
   answerDisplay.style.background = possibleAnswers[finalAnswer];
   answerDisplay.style.backgroundSize = "contain";
   questionDisplay.innerText = questionInput.value;
   questionInput.value = "";
 
+  if (questionDisplay.innerText == ''){
+    questionDisplay.innerText = 'Ask the Magic 8-Ball a Question!';
+  }
+
   //Re-centers the upside-down triangles
   answerDisplay.style.marginTop = "190px";
   if (finalAnswer > 9) {
     answerDisplay.style.marginTop = "210px";
   }
-  
+  if (animationToggle.innerText == 'Enable Animations'){
+    answerDisplay.style.opacity = "1";
+  }
+  if (animationToggle.innerText == 'Disable Animations'){
   //Triggers shake animation and delay for fade in animation
   answerDisplay.classList.remove("answerFadeIn");
   ball.classList.remove("shake");
-  setTimeout(shake, 1);
+  arm.classList.remove("armIn");
+  arm.classList.remove("armOut");
 
-  //Re-adds CSS class to trigger fade-in animation
-  setTimeout(shakeDelay, 1500);
+  setTimeout(armIn, 10);
+  setTimeout(shake, 1010);
+  setTimeout(armOut, 2500);
+  setTimeout(fadeIn, 2500);
+  
 
   //Temporarily disables the ask button to restrict repeated inputs
   submitButton.disabled = true;
   setTimeout(btnDisable, 4500);
+  }
 });
 
 
@@ -61,36 +91,22 @@ function btnDisable() {
   submitButton.disabled = false;
 }
 
-function fadeFunc() {
+function fadeIn() {
   answerDisplay.classList.add("answerFadeIn");
 }
 
-function shakeDelay() {
-  setTimeout(fadeFunc, 1);
-}
-
 function shake() {
+  arm.classList.remove("armIn");
   ball.classList.add("shake");
+  arm.classList.add("armShake");
 }
 
+function armIn() {
+  arm.classList.add("armIn");
+}
 
+function armOut() {
+  arm.classList.remove("armShake");
+  arm.classList.add("armOut");
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*const div = document.getElementById("answerDisplay");
-
-div.style.backgroundImage = 'url(https://www.thetoyinsider.com/wp-content/uploads/2015/04/Magic8ball.jpg)';
-
-div.style.height = '515px';
-div.style.width = '400px';
-div.style.backgroundSize = 'cover';*/

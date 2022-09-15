@@ -11,6 +11,17 @@ body {
     width: 100%;
   }
 
+  #arm {
+    width: 400px;
+    height: 800px;
+    top: -800px;
+    display: inline-block;
+    position: absolute;
+    /* background: url("../img/Arm3.png") no-repeat; */
+    background-size: contain;
+    z-index: 5;
+  }
+
   #ball{
     width: 600px;
     height: 600px;
@@ -22,8 +33,6 @@ body {
   #ans {
     height: 150px;
     width: 150px;
-    /* display: flex;
-    position: relative; */
     background-size: contain;
     z-index: 2;
     margin-top: 190px;
@@ -61,3 +70,36 @@ body {
     75%  { left: 2px; top: 8px; }
     100% { left: 0px; top: 0px; }
   }
+
+  .armIn {
+    animation: armIn 1s;
+    animation-fill-mode: forwards; 
+  }
+
+  @keyframes armIn {
+    0% { left: 730px; top: -800px; }
+    100% { left: 730px; top: -230px; }
+  }
+
+  .armOut {
+    animation: armOut 1s;
+  }
+
+  @keyframes armOut {
+    0% { left: 730px; top: -230px; }
+    100% { left: 730px; top: -800px; }
+  }
+
+  .armShake {
+    animation: armShake .5s;
+    animation-iteration-count: 3;
+  }
+
+  @keyframes armShake {
+    0%   { left: 730px; top: -230px; }
+    25%  { left: 732px; top: -225px; }
+    50%  { left: 735px; top: -230px; }
+    75%  { left: 732px; top: -222px; }
+    100% { left: 730px; top: -230px; }
+  }
+
