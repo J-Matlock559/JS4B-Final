@@ -60,9 +60,9 @@ submitButton.addEventListener("click", () => {
   }
 
   //Re-centers the upside-down triangles
-  answerDisplay.style.marginTop = "190px";
+  answerDisplay.style.marginTop = "31%";
   if (finalAnswer > 9) {
-    answerDisplay.style.marginTop = "210px";
+    answerDisplay.style.marginTop = "36%";
   }
 
   animationsEnabled();
