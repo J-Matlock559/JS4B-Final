@@ -147,11 +147,12 @@ button {
 
   #arm {
     height: 550px;
+    width: 250px;
   }
 
   .armContainer {
-    left: 50px;
-    top: 40px;
+    left: -25px;
+    top: 100px;
   }
 
   #questionInput {
