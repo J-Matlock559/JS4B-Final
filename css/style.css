@@ -10,16 +10,16 @@ body {
   width: 100%;
 }
 
-button {
-  padding: 20px;
-  font-size: large;
-  border-radius: 15px;
-}
-
 .h1 {
   height: 100px;
   text-align: center;
   margin-bottom: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: large;
+  border-radius: 15px;
 }
 
 #submitButton {
@@ -158,5 +158,16 @@ button {
 
   #questionInput {
     size: 10;
+  }
+
+  button {
+    padding: 10px;
+    font-size: large;
+    border-radius: 15px;
+  }
+  
+  #submitButton {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
