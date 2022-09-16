@@ -26,7 +26,7 @@ button {
   padding-right: 60px;
 }
 
-.test {
+.armContainer {
   position: absolute;
 }
 
@@ -129,7 +129,10 @@ button {
     text-align: center;
   }
 
-  
+  #ball {
+    height: 400px;
+    width: 400px;
+  }  
 
   .answerFadeIn { 
     animation: fadeIn 3s;
@@ -140,5 +143,14 @@ button {
     0% { opacity: 0; font-size: 1rem }
     20% { opacity: 0; font-size: 1rem }
     100% { opacity: 1; font-size: 2rem }
+  }
+
+  #arm {
+    height: 550px;
+  }
+
+  .armContainer {
+    left: 50px;
+    top: 20px;
   }
 }
