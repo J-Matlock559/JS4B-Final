@@ -1,5 +1,7 @@
 body {
   background-color: #222;
+  background: url("../img/Background4.jpg") no-repeat;
+  background-size:auto;
   color: white;
 }
 
