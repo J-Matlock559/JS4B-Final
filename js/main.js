@@ -32,7 +32,9 @@ const possibleAnswers = [
 const arms = [
   "url('./img/Arm.png') no-repeat",
   "url('./img/Arm2.png') no-repeat",
-  "url('./img/Arm3.png') no-repeat"
+  "url('./img/Arm3.png') no-repeat",
+  "url('./img/Arm4.png') no-repeat",
+  "url('./img/Arm5.png') no-repeat"
 ];
 
 animationToggle.addEventListener("click", () => {
