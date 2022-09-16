@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  width: 100vw;
+  width: 100%;
 }
 
 button {
@@ -125,7 +125,7 @@ button {
 
 @media  (max-width: 600px) {
   .h1 {
-    width: 300px;
+    width: 100%;
     text-align: center;
   }
 
@@ -151,6 +151,10 @@ button {
 
   .armContainer {
     left: 50px;
-    top: 20px;
+    top: 40px;
+  }
+
+  #questionInput {
+    size: 10;
   }
 }
