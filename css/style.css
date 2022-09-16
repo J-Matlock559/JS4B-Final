@@ -17,6 +17,7 @@ button {
 
 .h1 {
   height: 100px;
+  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -125,7 +126,10 @@ button {
 @media  (max-width: 600px) {
   .h1 {
     width: 300px;
+    text-align: center;
   }
+
+  
 
   .answerFadeIn { 
     animation: fadeIn 3s;
