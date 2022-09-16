@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+.bottomDiv {
+  z-index: 20;
+}
+
 .h1 {
   height: 100px;
   text-align: center;
@@ -29,11 +33,12 @@ button {
 
 .armContainer {
   position: absolute;
+  
 }
 
 #arm {
   width: 400px;
-  height: 800px;
+  height: 750px;
   top: -100%;
   display: inline-block;
   position: relative;
@@ -147,17 +152,18 @@ button {
   }
 
   #arm {
-    height: 550px;
+    height: 480px;
     width: 250px;
   }
 
   .armContainer {
-    left: -25px;
+    left: -15px;
     top: 100px;
   }
 
   #questionInput {
     size: 10;
+    
   }
 
   button {
